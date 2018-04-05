@@ -46,8 +46,7 @@ namespace DesafioDell.API
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            string sqlConnectionString2 = Configuration.GetConnectionString("DefaultConnection");
-            
+                        
             string sqlConnectionString = DBConn.GetRDSConnectionString();
 
 
@@ -71,11 +70,7 @@ namespace DesafioDell.API
             });
             
 
-            // Repositories
-            // services.AddScoped<IScheduleRepository, ScheduleRepository>();
-            //services.AddScoped<IUserRepository, UserRepository>();
-           // services.AddScoped<IAttendeeRepository, AttendeeRepository>();
-
+            
             services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             // Automapper Configuration
@@ -126,9 +121,7 @@ namespace DesafioDell.API
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-
-                // Uncomment the following line to add a route for porting Web API 2 controllers.
-                //routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
+               
             });
 
             DesafioDellDbInitializer.Initialize(app.ApplicationServices);

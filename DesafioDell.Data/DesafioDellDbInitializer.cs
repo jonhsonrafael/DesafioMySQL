@@ -13,7 +13,7 @@ namespace DesafioDell.Data
         {
             context = (DesafioDellContext)serviceProvider.GetService(typeof(DesafioDellContext));
 
-            InitializeSchedules();
+            //InitializeSchedules();
         }
 
         private static void InitializeSchedules()
